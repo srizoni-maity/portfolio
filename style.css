@@ -524,3 +524,194 @@ button{ font-family:inherit; cursor:pointer; background:none; border:none; color
   display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px;
   font-size:13px; color:var(--text-faint); font-family:var(--mono);
 }
+
+
+/* =========================
+   EDUCATION CARD
+   ========================= */
+
+.education-card-wrap {
+  width: 100%;
+}
+
+.education-card {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255,255,255,0.07),
+      transparent 35%
+    ),
+    rgba(255,255,255,0.025);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.education-card::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: -90px;
+  right: -60px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.035);
+  pointer-events: none;
+}
+
+.education-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.20);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.education-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+}
+
+.education-card__icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 15px;
+  background: rgba(255,255,255,0.045);
+  font-size: 1.4rem;
+}
+
+.education-card__period {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 999px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.education-card__content .stat-card__label {
+  display: block;
+  margin-bottom: 0.55rem;
+}
+
+.education-card__content h3 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.education-card__specialization {
+  margin: 0.55rem 0 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.65;
+}
+
+.education-card__specialization span {
+  opacity: 1;
+}
+
+.education-card__university {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.education-card__dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 14px currentColor;
+}
+
+.education-card__university strong {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.education-card__university small {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  opacity: 0.5;
+}
+
+.education-card__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.education-card__cgpa span {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.education-card__cgpa strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.education-card__cgpa strong small {
+  margin-left: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.45;
+}
+
+.education-card__status {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  opacity: 0.55;
+}
+
+.education-card__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .education-card {
+    padding: 1.4rem;
+    border-radius: 20px;
+  }
+
+  .education-card__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .education-card__status {
+    margin-top: 0.25rem;
+  }
+}
