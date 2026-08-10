@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Srizoni Maity — Portfolio</title>
+<meta name="description" content="Srizoni Maity — AI researcher building interpretable, multimodal and trustworthy intelligent systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav__brand">SRIZONI <span>MAITY</span></a>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="nav__links" id="navLinks">
+    <a href="#home" class="nav__link" data-nav>Home</a>
+    <a href="#about" class="nav__link" data-nav>About</a>
+    <a href="#experience" class="nav__link" data-nav>Experience</a>
+    <a href="#projects" class="nav__link" data-nav>Projects</a>
+    <a href="#publications" class="nav__link" data-nav>Publications</a>
+    <a href="#stack" class="nav__link" data-nav>Stack</a>
+    <a href="#contact" class="nav__link" data-nav>Contact</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <canvas id="synapseCanvas" class="hero__canvas"></canvas>
+  <div class="hero__typebg" aria-hidden="true">PORTFOLIO</div>
+
+  <div class="hero__inner">
+    <div class="hero__figure">
+      <img src="assets/portrait-cutout.png" alt="Srizoni Maity" class="hero__photo">
+      <div class="hero__ring"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="eyebrow reveal">Hello, I'm</p>
+      <h1 class="hero__name reveal">Srizoni<br><span>Maity</span></h1>
+      <p class="hero__tagline reveal">
+        Building <em>interpretable</em>, <em>multimodal</em> and <em>trustworthy</em>
+        intelligent systems that not only predict — but also <span class="accent">explain</span>.
+      </p>
+      <div class="hero__cta reveal">
+        <a href="#projects" class="btn btn--solid">Explore my work <span class="btn__arrow">→</span></a>
+        <a href="cv.pdf" download class="btn btn--outline">Download CV <span class="btn__icon">↓</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span>scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+  <p class="section__eyebrow reveal">01 — About Me</p>
+  <h2 class="section__title reveal">
+    Curious about intelligence.<br>
+    Obsessed with making it <span class="accent">understandable.</span>
+  </h2>
+
+  <div class="about__grid">
+    <div class="about__photo reveal">
+      <img src="assets/portrait-bw.png" alt="Portrait of Srizoni Maity">
+      <span class="about__sign">Srizoni</span>
+    </div>
+
+    <div class="about__body reveal">
+      <p>
+        I'm an aspiring AI researcher and engineer focused on building interpretable, robust
+        and scalable intelligent systems for real-world problems. My work lives at the
+        intersection of Explainable AI, Multimodal Intelligence and Trustworthy Machine Learning —
+        where a model's confidence means nothing unless a person can trust the reason behind it.
+      </p>
+
+      <div class="about__cards">
+        <div class="stat-card">
+          <span class="stat-card__label">Education</span>
+          <p class="stat-card__main">B.Tech, Computer Science &amp; Engineering</p>
+          <p class="stat-card__sub">Specialization in Data Science</p>
+          <p class="stat-card__sub">The Neotia University · West Bengal, India</p>
+          <p class="stat-card__sub">2022 — 2026</p>
+        </div>
+        <div class="stat-card stat-card--cgpa">
+          <span class="stat-card__label">CGPA</span>
+          <p class="stat-card__number"><span id="cgpaCount">0.00</span> <small>/ 10</small></p>
+          <div class="stat-card__bar"><span id="cgpaBar"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-map reveal">
+    <h3 class="research-map__title">Research Interests</h3>
+    <div class="research-map__orbit" id="orbit">
+      <div class="orbit-core">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.5 2a5.5 5.5 0 0 0-5.4 6.6A4.5 4.5 0 0 0 5 17.4V19a2 2 0 0 0 2 2h1v-3a1 1 0 0 1 1-1h1v4h4v-4h1a1 1 0 0 1 1 1v3h1a2 2 0 0 0 2-2v-1.6a4.5 4.5 0 0 0 .9-8.8A5.5 5.5 0 0 0 14.5 2a5.4 5.4 0 0 0-2.5.6A5.4 5.4 0 0 0 9.5 2Z"/></svg>
+      </div>
+      <svg class="orbit-lines" viewBox="0 0 520 520"></svg>
+      <div class="orbit-node" style="--i:0" data-label="Explainable AI">
+        <span class="orbit-node__icon">✂</span><span class="orbit-node__label">Explainable AI</span>
+      </div>
+      <div class="orbit-node" style="--i:1" data-label="Multimodal AI">
+        <span class="orbit-node__icon">◈</span><span class="orbit-node__label">Multimodal AI</span>
+      </div>
+      <div class="orbit-node" style="--i:2" data-label="Trustworthy Machine Learning">
+        <span class="orbit-node__icon">🛡</span><span class="orbit-node__label">Trustworthy ML</span>
+      </div>
+      <div class="orbit-node" style="--i:3" data-label="Edge Intelligence">
+        <span class="orbit-node__icon">◉</span><span class="orbit-node__label">Edge Intelligence</span>
+      </div>
+      <div class="orbit-node" style="--i:4" data-label="Computer Vision">
+        <span class="orbit-node__icon">👁</span><span class="orbit-node__label">Computer Vision</span>
+      </div>
+      <div class="orbit-node" style="--i:5" data-label="Natural Language Processing">
+        <span class="orbit-node__icon">💬</span><span class="orbit-node__label">NLP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section experience" id="experience">
+  <p class="section__eyebrow reveal">02 — Experience</p>
+  <h2 class="section__title reveal">Research &amp; industry <span class="accent">timelines.</span></h2>
+
+  <div class="timeline" id="timeline">
+    <div class="timeline__spine" aria-hidden="true"></div>
+
+    <div class="timeline__group">
+      <span class="timeline__group-label">Research</span>
+      <article class="timeline-card" data-metric="0.9138" data-metric-label="ROC-AUC">
+        <div class="timeline-card__dot"></div>
+        <div class="timeline-card__body">
+          <div class="timeline-card__top">
+            <h3>Indian Institute of Information Technology Guwahati</h3>
+            <span class="timeline-card__date">Jan – Jun 2026</span>
+          </div>
+          <p class="timeline-card__role">Research Intern · Supervisor: Dr. Masihuddin</p>
+          <p class="timeline-card__desc">Proposed and validated a leakage-free XAI framework for early PCOS prediction using survey data, integrating feature engineering, consensus feature selection, nested cross-validation, and SHAP explainability.</p>
+          <div class="timeline-card__foot">
+            <span class="metric-pill">0.9138 <small>ROC-AUC</small></span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="timeline__group">
+      <span class="timeline__group-label">Industry</span>
+
+      <article class="timeline-card" data-metric="57.1%" data-metric-label="Faster">
+        <div class="timeline-card__dot"></div>
+        <div class="timeline-card__body">
+          <div class="timeline-card__top">
+            <h3>Defence Research &amp; Development Organization (DRDO)</h3>
+            <span class="timeline-card__date">Aug – Dec 2025</span>
+          </div>
+          <p class="timeline-card__role">Project Intern</p>
+          <p class="timeline-card__desc">Optimized mission-critical radar software through compiler-level optimization, low-level systems tuning and performance profiling while developing a real-time radar visualization and analytics framework using Python and MATLAB.</p>
+          <div class="timeline-card__foot">
+            <span class="metric-pill">57.1% <small>faster</small></span>
+            <span class="metric-swap">3.66s <b>→</b> 1.57s</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-card">
+        <div class="timeline-card__dot"></div>
+        <div class="timeline-card__body">
+          <div class="timeline-card__top">
+            <h3>DataCore AILABS</h3>
+            <span class="timeline-card__date">Jun – Jul 2025</span>
+          </div>
+          <p class="timeline-card__role">Project Intern</p>
+          <p class="timeline-card__desc">Engineered an end-to-end MLOps pipeline for retail sales forecasting and deployed a Flask–Plotly analytics platform for real-time forecasting and decision support.</p>
+          <div class="timeline-card__tags">
+            <span>Prophet</span><span>XGBoost</span><span>LSTM</span><span>MLflow</span><span>Flask</span><span>Plotly</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="timeline-card">
+        <div class="timeline-card__dot"></div>
+        <div class="timeline-card__body">
+          <div class="timeline-card__top">
+            <h3>West Bengal Electronics Industry Development Corporation Ltd.</h3>
+            <span class="timeline-card__date">Jun – Aug 2024</span>
+          </div>
+          <p class="timeline-card__role">Project Intern</p>
+          <p class="timeline-card__desc">Developed a machine learning-driven academic analytics platform for CGPA prediction, student performance analytics and educational insights.</p>
+          <div class="timeline-card__tags">
+            <span>Machine Learning</span><span>Streamlit</span><span>Plotly</span><span>CGPA Prediction</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section projects" id="projects">
+  <p class="section__eyebrow reveal">03 — Projects</p>
+  <h2 class="section__title reveal">Systems I've <span class="accent">architected</span> end to end.</h2>
+
+  <div class="proj-carousel reveal">
+    <button class="proj-nav proj-nav--prev" id="projPrev" aria-label="Previous project">‹</button>
+    <div class="proj-track" id="projTrack">
+
+      <article class="proj-card" data-flow="vision,audio,text,physio,psycho">
+        <div class="proj-card__head">
+          <span class="proj-card__num">01</span>
+          <div>
+            <h3>NOVA</h3>
+            <p class="proj-card__subtitle">When five modalities think together.</p>
+          </div>
+        </div>
+        <p class="proj-card__desc">Multimodal AI Stress Intelligence Platform combining visual, acoustic, linguistic, physiological and psychometric representations for stress assessment.</p>
+
+        <div class="fusion-diagram">
+          <div class="fusion-diagram__streams">
+            <span data-s="vision">VISION</span>
+            <span data-s="audio">AUDIO</span>
+            <span data-s="text">TEXT</span>
+            <span data-s="physio">PHYSIO</span>
+            <span data-s="psycho">PSYCHO</span>
+          </div>
+          <div class="fusion-diagram__arrow">↓</div>
+          <div class="fusion-diagram__node">MULTIMODAL FUSION</div>
+          <div class="fusion-diagram__arrow">↓</div>
+          <div class="fusion-diagram__result">STRESS INTELLIGENCE</div>
+        </div>
+
+        <div class="proj-card__foot">
+          <span class="metric-pill metric-pill--lg">96.3% <small>classification accuracy</small></span>
+          <div class="proj-card__tags"><span>EfficientNet</span><span>ViT</span><span>Wav2Vec2</span><span>HuBERT</span><span>RoBERTa</span></div>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-card__head">
+          <span class="proj-card__num">02</span>
+          <div>
+            <h3>NeuraTune</h3>
+            <p class="proj-card__subtitle">Teaching machines to read emotion.</p>
+          </div>
+        </div>
+        <p class="proj-card__desc">CNN-based affective computing pipeline for real-time facial emotion recognition and personalized music recommendation.</p>
+
+        <div class="flow-diagram">
+          <div class="flow-diagram__step"><span class="flow-diagram__icon">🙂</span>FACE</div>
+          <div class="flow-diagram__arrow">→</div>
+          <div class="flow-diagram__step"><span class="flow-diagram__icon">〰</span>EMOTION DETECTION</div>
+          <div class="flow-diagram__arrow">→</div>
+          <div class="flow-diagram__step"><span class="flow-diagram__icon">♫</span>MUSIC RECOMMENDATION</div>
+        </div>
+
+        <div class="proj-card__foot">
+          <a href="https://github.com/srizoni-maity/NeuraTune" target="_blank" rel="noopener" class="repo-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.35c-2.22.48-2.69-1.07-2.69-1.07-.36-.92-.89-1.16-.89-1.16-.72-.5.06-.49.06-.49.8.06 1.22.82 1.22.82.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.11.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            github.com/srizoni-maity/NeuraTune
+          </a>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-card__head">
+          <span class="proj-card__num">03</span>
+          <div>
+            <h3>Edge-Vision</h3>
+            <p class="proj-card__subtitle">Intelligence at the edge. Privacy by design.</p>
+          </div>
+        </div>
+        <p class="proj-card__desc">TinyML-powered edge vision framework for real-time anomaly detection, enabling privacy-preserving on-device inference for smart-city IoT applications.</p>
+
+        <div class="flow-diagram">
+          <div class="flow-diagram__step"><span class="flow-diagram__icon">📷</span>CAMERA</div>
+          <div class="flow-diagram__arrow">→</div>
+          <div class="flow-diagram__step"><span class="flow-diagram__icon">◆</span>EDGE DEVICE</div>
+          <div class="flow-diagram__arrow">→</div>
+          <div class="flow-diagram__step flow-diagram__step--alert"><span class="flow-diagram__icon">⚠</span>LOCAL ANOMALY ALERT</div>
+        </div>
+        <p class="proj-card__note">Inference happens on-device — nothing leaves the edge.</p>
+
+        <div class="proj-card__foot">
+          <a href="https://github.com/srizoni-maity/Edge-Vision-Anomaly-Detection-with-TinyML-Privacy-Preserving-AI-for-Smart-Cities-IoT" target="_blank" rel="noopener" class="repo-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.35c-2.22.48-2.69-1.07-2.69-1.07-.36-.92-.89-1.16-.89-1.16-.72-.5.06-.49.06-.49.8.06 1.22.82 1.22.82.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.11.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            github.com/srizoni-maity/Edge-Vision
+          </a>
+        </div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-card__head">
+          <span class="proj-card__num">04</span>
+          <div>
+            <h3>Bhasha Arogya</h3>
+            <p class="proj-card__subtitle">Healthcare without a language barrier.</p>
+          </div>
+        </div>
+        <p class="proj-card__desc">RAG-enhanced multilingual LLM framework for cross-language medical query understanding and context-grounded healthcare assistance.</p>
+
+        <div class="flow-diagram">
+          <div class="flow-diagram__step"><span class="flow-diagram__icon">বা</span>BENGALI</div>
+          <div class="flow-diagram__arrow">→</div>
+          <div class="flow-diagram__step"><span class="flow-diagram__icon">⌕</span>RETRIEVAL</div>
+          <div class="flow-diagram__arrow">→</div>
+          <div class="flow-diagram__step"><span class="flow-diagram__icon">✦</span>REASONING</div>
+          <div class="flow-diagram__arrow">→</div>
+          <div class="flow-diagram__step"><span class="flow-diagram__icon">💬</span>RESPONSE</div>
+        </div>
+
+        <div class="proj-card__foot">
+          <a href="https://github.com/srizoni-maity/Bhasha-Arogya_Cross-Language-Healthcare-Chatbot" target="_blank" rel="noopener" class="repo-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.35c-2.22.48-2.69-1.07-2.69-1.07-.36-.92-.89-1.16-.89-1.16-.72-.5.06-.49.06-.49.8.06 1.22.82 1.22.82.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.11.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            github.com/srizoni-maity/Bhasha-Arogya
+          </a>
+        </div>
+      </article>
+
+    </div>
+    <button class="proj-nav proj-nav--next" id="projNext" aria-label="Next project">›</button>
+  </div>
+  <div class="proj-dots" id="projDots"></div>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section class="section publications" id="publications">
+  <p class="section__eyebrow reveal">04 — Publications</p>
+  <h2 class="section__title reveal">Ideas become research when they <span class="accent">survive experimentation.</span></h2>
+
+  <div class="pub-grid">
+    <article class="pub-card reveal">
+      <span class="pub-card__tag">Manuscript in preparation</span>
+      <h3>An Explainable Machine Learning Framework for Early Prediction of Polycystic Ovary Syndrome (PCOS)</h3>
+      <p>Using dietary, lifestyle, and industrial trans-fat consumption patterns among college-age women to build a leakage-free, interpretable prediction pipeline.</p>
+    </article>
+
+    <article class="pub-card pub-card--dataset reveal">
+      <span class="pub-card__tag">Open research dataset</span>
+      <h3>DR-Multimodal India <small>(Kaggle)</small></h3>
+      <p>A publicly released multimodal healthcare dataset supporting AI-driven medical research.</p>
+      <a href="https://www.kaggle.com/datasets/srizonimaity/dr-multimodal-india" target="_blank" rel="noopener" class="pub-card__link">View on Kaggle →</a>
+    </article>
+  </div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section class="section stack" id="stack">
+  <p class="section__eyebrow reveal">05 — Stack</p>
+  <h2 class="section__title reveal">The tools behind the <span class="accent">intelligence.</span></h2>
+
+  <div class="stack__filters reveal" id="stackFilters">
+    <button class="stack-chip is-active" data-cat="all">All</button>
+    <button class="stack-chip" data-cat="lang">Programming</button>
+    <button class="stack-chip" data-cat="ml">AI / ML</button>
+    <button class="stack-chip" data-cat="research">Research &amp; Modeling</button>
+    <button class="stack-chip" data-cat="frameworks">Frameworks</button>
+    <button class="stack-chip" data-cat="dev">Development</button>
+  </div>
+
+  <div class="stack__cloud" id="stackCloud">
+    <!-- lang -->
+    <span class="tech-node" data-cat="lang">Python</span>
+    <span class="tech-node" data-cat="lang">SQL</span>
+    <span class="tech-node" data-cat="lang">C / C++</span>
+    <!-- ml -->
+    <span class="tech-node" data-cat="ml">Machine Learning</span>
+    <span class="tech-node" data-cat="ml">Deep Learning</span>
+    <span class="tech-node" data-cat="ml">Explainable AI</span>
+    <span class="tech-node" data-cat="ml">Multimodal AI</span>
+    <span class="tech-node" data-cat="ml">Computer Vision</span>
+    <span class="tech-node" data-cat="ml">NLP</span>
+    <span class="tech-node" data-cat="ml">LLMs</span>
+    <span class="tech-node" data-cat="ml">Affective Computing</span>
+    <span class="tech-node" data-cat="ml">Edge AI</span>
+    <span class="tech-node" data-cat="ml">TinyML</span>
+    <!-- research -->
+    <span class="tech-node" data-cat="research">Representation Learning</span>
+    <span class="tech-node" data-cat="research">Statistical Learning</span>
+    <span class="tech-node" data-cat="research">Feature Engineering</span>
+    <span class="tech-node" data-cat="research">Feature Selection</span>
+    <span class="tech-node" data-cat="research">Hyperparameter Optimization</span>
+    <span class="tech-node" data-cat="research">Nested Cross-Validation</span>
+    <span class="tech-node" data-cat="research">Model Calibration</span>
+    <span class="tech-node" data-cat="research">Decision Fusion</span>
+    <span class="tech-node" data-cat="research">SHAP</span>
+    <span class="tech-node" data-cat="research">Uncertainty Quantification</span>
+    <!-- frameworks -->
+    <span class="tech-node" data-cat="frameworks">PyTorch</span>
+    <span class="tech-node" data-cat="frameworks">TensorFlow</span>
+    <span class="tech-node" data-cat="frameworks">TensorFlow Lite</span>
+    <span class="tech-node" data-cat="frameworks">🤗 Transformers</span>
+    <span class="tech-node" data-cat="frameworks">Scikit-learn</span>
+    <span class="tech-node" data-cat="frameworks">OpenCV</span>
+    <span class="tech-node" data-cat="frameworks">XGBoost</span>
+    <span class="tech-node" data-cat="frameworks">CatBoost</span>
+    <span class="tech-node" data-cat="frameworks">NumPy</span>
+    <span class="tech-node" data-cat="frameworks">Pandas</span>
+    <!-- dev -->
+    <span class="tech-node" data-cat="dev">Git</span>
+    <span class="tech-node" data-cat="dev">GitHub</span>
+    <span class="tech-node" data-cat="dev">Jupyter</span>
+    <span class="tech-node" data-cat="dev">VS Code</span>
+    <span class="tech-node" data-cat="dev">Streamlit</span>
+  </div>
+</section>
+
+<!-- ============ RECOGNITION ============ -->
+<section class="section recognition" id="recognition">
+  <p class="section__eyebrow reveal">06 — Recognition</p>
+  <h2 class="section__title reveal">Milestones that shaped the <span class="accent">journey.</span></h2>
+
+  <div class="recognition__cols">
+    <div class="recognition__col reveal">
+      <h3>Recognition</h3>
+      <ul>
+        <li><span>Winner</span>National Science Day Poster Presentation</li>
+        <li><span>Scholarship</span>Tejwashee Merit Scholarship — The Neotia University</li>
+        <li><span>Scholarship</span>Swami Vivekananda Merit-cum-Means Scholarship — Govt. of West Bengal</li>
+      </ul>
+    </div>
+    <div class="recognition__col reveal">
+      <h3>Training</h3>
+      <ul>
+        <li><span>Course</span>Elements of AI — University of Helsinki</li>
+        <li><span>Course</span>Introduction to Generative AI — Google Cloud / Simplilearn</li>
+        <li><span>Course</span>Machine Learning with Python — freeCodeCamp (300h)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEYOND THE LAB ============ -->
+<section class="section beyond" id="beyond">
+  <p class="section__eyebrow reveal">07 — Beyond the Lab</p>
+  <h2 class="section__title reveal">Intelligence has a <span class="accent">human side.</span></h2>
+
+  <div class="beyond__grid">
+    <article class="beyond-card reveal">
+      <span class="beyond-card__icon">🖥</span>
+      <h3>Digital Literacy Outreach</h3>
+      <p>Facilitated foundational computer literacy training for students from underserved rural communities in Diamond Harbour, West Bengal.</p>
+    </article>
+    <article class="beyond-card reveal">
+      <span class="beyond-card__icon">🌊</span>
+      <h3>International Coastal Cleanup</h3>
+      <p>Contributed to a community-based coastal conservation and environmental stewardship initiative at Digha Beach, West Bengal.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <p class="section__eyebrow reveal">08 — Contact</p>
+  <h2 class="section__title reveal">Let's build what <span class="accent">comes next.</span></h2>
+  <p class="contact__lead reveal">Interested in research, intelligent systems, or meaningful collaborations?</p>
+
+  <div class="contact__grid reveal">
+    <a class="contact-card" href="mailto:im.srizoni@gmail.com">
+      <span class="contact-card__icon">✉</span>
+      <span class="contact-card__label">Email</span>
+      <span class="contact-card__value">im.srizoni@gmail.com</span>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/srizoni-maity-012235356" target="_blank" rel="noopener">
+      <span class="contact-card__icon">in</span>
+      <span class="contact-card__label">LinkedIn</span>
+      <span class="contact-card__value">srizoni-maity</span>
+    </a>
+    <a class="contact-card" href="https://github.com/srizoni-maity" target="_blank" rel="noopener">
+      <span class="contact-card__icon">⌥</span>
+      <span class="contact-card__label">GitHub</span>
+      <span class="contact-card__value">srizoni-maity</span>
+    </a>
+    <a class="contact-card" href="https://www.kaggle.com/datasets/srizonimaity/dr-multimodal-india" target="_blank" rel="noopener">
+      <span class="contact-card__icon">◍</span>
+      <span class="contact-card__label">Kaggle</span>
+      <span class="contact-card__value">DR-Multimodal India</span>
+    </a>
+  </div>
+
+  <footer class="footer">
+    <p>+91 94341 61488 · Kolkata, India</p>
+    <p class="footer__sign">Srizoni Maity — © <span id="year"></span></p>
+  </footer>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
